@@ -1,62 +1,65 @@
 abstract class AITemplate {
+    public sumForce: number = 50;
+    public sumIntelligence: number = 50;
+    public sumAgility: number = 50;
     public templateMethod(): void {
         this.force();
         this.intelligence();
         this.agility();
     }
 
-    public force(): number {
-        return 0;
+    public force(points: number = 0): number {
+        return this.sumForce + points;
     }
 
-    public intelligence(): number {
-        return 0;
+    public intelligence(points: number = 0): number {
+        return this.sumIntelligence + points;
     }
 
-    public agility(): number {
-        return 0;
+    public agility(points: number = 0): number {
+        return this.sumAgility + points;
     }
 }
 
 class Cleric extends AITemplate {
-    force(): number {
-        return 50;
+    force(points: number = 0): number {
+        return this.sumForce;
     }
 
-    intelligence(): number {
-        return 90;
+    intelligence(points: number = 0): number {
+        return this.sumIntelligence + points;
     }
 
-    agility(): number {
-        return 70;
+    agility(points: number = 0): number {
+        return this.sumAgility + points;
     }
 }
 
 class Warrior extends AITemplate {
-    force(): number {
-        return 95;
+    force(points: number = 0): number {
+        return this.sumForce + points;
     }
 
-    intelligence(): number {
-        return 60;
+    intelligence(points: number = 0): number {
+        return this.sumIntelligence + points;
     }
 
-    agility(): number {
-        return 70;
+    agility(points: number = 0): number {
+        return this.sumAgility + points;
     }
 }
 
 class Assassin extends AITemplate {
-    force(): number {
-        return 60;
+    force(points: number = 0): number {
+        return this.sumForce + points;
     }
 
-    intelligence(): number {
-        return 75;
+    intelligence(points: number = 0): number {
+        return this.sumIntelligence + points;
     }
 
-    agility(): number {
-        return 90;
+    agility(points: number = 0): number {
+        return this.sumAgility + points;
     }
 }
 
@@ -68,20 +71,20 @@ clerik.templateMethod();
 console.log(``);
 console.log(`Clerik`);
 console.log(`Force - ${clerik.force()}`);
-console.log(`Agility - ${clerik.agility()}`);
-console.log(`Intelligence - ${clerik.intelligence()}`);
+console.log(`Agility - ${clerik.agility(20)}`);
+console.log(`Intelligence - ${clerik.intelligence(40)}`);
 console.log(``);
 
 warrior.templateMethod();
 console.log(`Warrior`);
-console.log(`Force - ${warrior.force()}`);
-console.log(`Agility - ${warrior.agility()}`);
-console.log(`Intelligence - ${warrior.intelligence()}`);
+console.log(`Force - ${warrior.force(45)}`);
+console.log(`Agility - ${warrior.agility(20)}`);
+console.log(`Intelligence - ${warrior.intelligence(10)}`);
 console.log(``);
 
 assassin.templateMethod();
 console.log(`Assassin`);
-console.log(`Force - ${assassin.force()}`);
-console.log(`Agility - ${assassin.agility()}`);
-console.log(`Intelligence - ${assassin.intelligence()}`);
+console.log(`Force - ${assassin.force(10)}`);
+console.log(`Agility - ${assassin.agility(40)}`);
+console.log(`Intelligence - ${assassin.intelligence(25)}`);
 console.log(``);

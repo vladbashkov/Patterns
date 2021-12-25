@@ -13,73 +13,88 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var AIBuilder = /** @class */ (function () {
-    function AIBuilder() {
+var AITemplate = /** @class */ (function () {
+    function AITemplate() {
+        this.sumForce = 50;
+        this.sumIntelligence = 50;
+        this.sumAgility = 50;
     }
-    AIBuilder.prototype.templateMethod = function () {
+    AITemplate.prototype.templateMethod = function () {
         this.force();
         this.intelligence();
         this.agility();
     };
-    AIBuilder.prototype.force = function () {
-        return 0;
+    AITemplate.prototype.force = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumForce + points;
     };
-    AIBuilder.prototype.intelligence = function () {
-        return 0;
+    AITemplate.prototype.intelligence = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumIntelligence + points;
     };
-    AIBuilder.prototype.agility = function () {
-        return 0;
+    AITemplate.prototype.agility = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumAgility + points;
     };
-    return AIBuilder;
+    return AITemplate;
 }());
 var Cleric = /** @class */ (function (_super) {
     __extends(Cleric, _super);
     function Cleric() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Cleric.prototype.force = function () {
-        return 50;
+    Cleric.prototype.force = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumForce;
     };
-    Cleric.prototype.intelligence = function () {
-        return 90;
+    Cleric.prototype.intelligence = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumIntelligence + points;
     };
-    Cleric.prototype.agility = function () {
-        return 70;
+    Cleric.prototype.agility = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumAgility + points;
     };
     return Cleric;
-}(AIBuilder));
+}(AITemplate));
 var Warrior = /** @class */ (function (_super) {
     __extends(Warrior, _super);
     function Warrior() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Warrior.prototype.force = function () {
-        return 95;
+    Warrior.prototype.force = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumForce + points;
     };
-    Warrior.prototype.intelligence = function () {
-        return 60;
+    Warrior.prototype.intelligence = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumIntelligence + points;
     };
-    Warrior.prototype.agility = function () {
-        return 70;
+    Warrior.prototype.agility = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumAgility + points;
     };
     return Warrior;
-}(AIBuilder));
+}(AITemplate));
 var Assassin = /** @class */ (function (_super) {
     __extends(Assassin, _super);
     function Assassin() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Assassin.prototype.force = function () {
-        return 60;
+    Assassin.prototype.force = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumForce + points;
     };
-    Assassin.prototype.intelligence = function () {
-        return 75;
+    Assassin.prototype.intelligence = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumIntelligence + points;
     };
-    Assassin.prototype.agility = function () {
-        return 90;
+    Assassin.prototype.agility = function (points) {
+        if (points === void 0) { points = 0; }
+        return this.sumAgility + points;
     };
     return Assassin;
-}(AIBuilder));
+}(AITemplate));
 var clerik = new Cleric();
 var warrior = new Warrior();
 var assassin = new Assassin();
@@ -87,18 +102,18 @@ clerik.templateMethod();
 console.log("");
 console.log("Clerik");
 console.log("Force - ".concat(clerik.force()));
-console.log("Agility - ".concat(clerik.agility()));
-console.log("Intelligence - ".concat(clerik.intelligence()));
+console.log("Agility - ".concat(clerik.agility(20)));
+console.log("Intelligence - ".concat(clerik.intelligence(40)));
 console.log("");
 warrior.templateMethod();
 console.log("Warrior");
-console.log("Force - ".concat(warrior.force()));
-console.log("Agility - ".concat(warrior.agility()));
-console.log("Intelligence - ".concat(warrior.intelligence()));
+console.log("Force - ".concat(warrior.force(45)));
+console.log("Agility - ".concat(warrior.agility(20)));
+console.log("Intelligence - ".concat(warrior.intelligence(10)));
 console.log("");
 assassin.templateMethod();
 console.log("Assassin");
-console.log("Force - ".concat(assassin.force()));
-console.log("Agility - ".concat(assassin.agility()));
-console.log("Intelligence - ".concat(assassin.intelligence()));
+console.log("Force - ".concat(assassin.force(10)));
+console.log("Agility - ".concat(assassin.agility(40)));
+console.log("Intelligence - ".concat(assassin.intelligence(25)));
 console.log("");

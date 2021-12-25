@@ -25,8 +25,8 @@ var BankAccount = /** @class */ (function () {
     BankAccount.prototype.payment = function (price) {
         if (this.payAmount(price)) {
             console.log("You paid ".concat(price, " using your ").concat(this.title));
-            this.remainder = this.balance - price;
-            console.log("There is ".concat(this.remainder, " left on your accaount"));
+            this.remain = this.balance - price;
+            console.log("There is ".concat(this.remain, " left on your accaount"));
         }
         else if (this.incomer) {
             console.log("Something wrong with ".concat(this.title));

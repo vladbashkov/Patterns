@@ -3,10 +3,10 @@ var TV = /** @class */ (function () {
         this.state = false;
     }
     TV.prototype.on = function () {
-        this.state = true;
+        return this.state = true;
     };
     TV.prototype.off = function () {
-        this.state = false;
+        return this.state = false;
     };
     return TV;
 }());
@@ -15,10 +15,10 @@ var onTV = /** @class */ (function () {
         this.television = television;
     }
     onTV.prototype.execute = function () {
-        this.television.on();
+        return this.television.on();
     };
     onTV.prototype.undo = function () {
-        this.television.off();
+        return this.television.off();
     };
     return onTV;
 }());
@@ -27,10 +27,10 @@ var offTV = /** @class */ (function () {
         this.television = television;
     }
     offTV.prototype.execute = function () {
-        this.television.off();
+        return this.television.off();
     };
     offTV.prototype.undo = function () {
-        this.television.on();
+        return this.television.on();
     };
     return offTV;
 }());
@@ -42,10 +42,10 @@ var Remote = /** @class */ (function () {
         this.offCommand = offCommand;
     };
     Remote.prototype.onButtonClick = function () {
-        this.onCommand.execute();
+        return this.onCommand.execute();
     };
     Remote.prototype.offButtonClick = function () {
-        this.offCommand.execute();
+        return this.offCommand.execute();
     };
     return Remote;
 }());

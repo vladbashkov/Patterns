@@ -2,7 +2,7 @@ class BankAccount {
     public title: string;
     public balance: number;
     public incomer: BankAccount;
-    public remainder: number;
+    public remain: number;
 
     public payAmount(amount: number): Boolean {
         return this.balance >= amount;
@@ -15,8 +15,8 @@ class BankAccount {
     public payment(price: number): any {
         if(this.payAmount(price)) {
             console.log(`You paid ${price} using your ${this.title}`);
-            this.remainder = this.balance - price;
-            console.log(`There is ${this.remainder} left on your accaount`);
+            this.remain = this.balance - price;
+            console.log(`There is ${this.remain} left on your accaount`);
         } else if (this.incomer) {
             console.log(`Something wrong with ${this.title}`)
             this.incomer.payment(price)
