@@ -27,7 +27,7 @@ class Team implements UnitsObject {
             console.log(`${newUnit.title} join ${this.title}`);
             this.unitsArr.push(newUnit);
         } else {
-            console.log(`This unit already in the team`);
+            console.log(`This unit is already in the team`);
         }
     }
 
@@ -38,7 +38,7 @@ class Team implements UnitsObject {
             };
         });
         if(gones.length > 0) {
-            console.log(`${deadUnit.title} gone in actions`);
+            console.log(`${deadUnit.title} is gone in actions`);
             this.unitsArr.slice(gones[0], 1);
         } else {
             console.log(`No battle casualties`);

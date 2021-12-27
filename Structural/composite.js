@@ -18,7 +18,7 @@ var Team = /** @class */ (function () {
             this.unitsArr.push(newUnit);
         }
         else {
-            console.log("This unit already in the team");
+            console.log("This unit is already in the team");
         }
     };
     Team.prototype.goneUnit = function (deadUnit) {
@@ -29,7 +29,7 @@ var Team = /** @class */ (function () {
             ;
         });
         if (gones.length > 0) {
-            console.log("".concat(deadUnit.title, " gone in actions"));
+            console.log("".concat(deadUnit.title, " is gone in actions"));
             this.unitsArr.slice(gones[0], 1);
         }
         else {
